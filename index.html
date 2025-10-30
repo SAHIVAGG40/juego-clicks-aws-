@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de clics - Justin Alzate</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #1e1e2f, #3a3a64);
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 { color: #ffcc00; margin-bottom: 10px; }
+    #score, #timer { font-size: 1.5em; margin: 10px; }
+    button {
+      font-size: 24px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff6600;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background-color: #ff3300; transform: scale(1.1); }
+    .footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 Juego de Clics - Justin Alzate</h1>
+  <p>Haz clic lo más rápido posible antes de que se acabe el tiempo!</p>
+  <div id="score">Puntaje: 0</div>
+  <div id="timer">Tiempo: 10</div>
+  <button onclick="sumarPunto()">¡Clic aquí!</button>
+  <div class="footer">Proyecto en Docker - AWS (Bastion + Privada)</div>
+
+  <script>
+    let puntaje = 0;
+    let tiempo = 10;
+    const timer = setInterval(() => {
+      tiempo--;
+      document.getElementById('timer').textContent = `Tiempo: ${tiempo}`;
+      if (tiempo === 0) {
+        clearInterval(timer);
+        alert(`Fin del juego! Tu puntaje fue: ${puntaje}`);
+      }
+    }, 1000);
+    function sumarPunto() {
+      if (tiempo > 0) {
+        puntaje++;
+        document.getElementById('score').textContent = `Puntaje: ${puntaje}`;
+      }
+    }
+  </script>
+</body>
+</html>
