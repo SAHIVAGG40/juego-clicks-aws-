@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Juego de clicks
 
 mi proyecto presenta un juego de clicks en una pagina web y este mismo esta soportado por una infraestructura de aws con vpc, bastion y privada(o por lo menos asi lo hice yo) 
@@ -38,3 +39,7 @@ con este comando podras realizar el tunel
 
 ssh -i bastion.pem -L 8080:10.0.0.138:80 ubuntu@<IP_PUBLICA_BASTION>
 
+=======
+# juego-clicks-aws-
+un juego de clicks basico en una estructura de aws
+>>>>>>> 377fc1bb20ff83c95ae82703aa86b2f6ee01638c
